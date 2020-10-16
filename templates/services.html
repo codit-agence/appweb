@@ -1,0 +1,95 @@
+{% extends 'layouts/base.html' %}
+{% load static%}
+
+{% block content %}
+
+
+		<!-- START WHY CHOOSE US -->
+		<section class="why_choice_us section-padding">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4 col-sm-4 col-xs-12">
+						<img src="{% static 'assets/img/working-1.jpg' %}" height="100%" class="img-responsive" alt="" />
+					</div><!-- END COL -->
+					<div class="col-md-8 col-sm-8 col-xs-12">
+					    <div class="why_choose">
+							<h3>Why Choose Us</h3>
+							<span></span>
+							<p>CODIT est une société spécialisée En Communication, Conseil digital & en Développement, déploiement de solutions informatiques en relation avec ces deux domaines, notamment les solutions d’information.</p>
+
+<p>Avec 20 ans d’expérience, en consulting et formation et riche d’un relationnel tissé au fil des années, CODIT met à votre disposition une expertise éprouvée et un réseau relationnel avec des références national.
+</p>
+						</div>
+
+						<div class="according-area">
+
+							<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="false">
+						{% for action in actions %}
+								<div class="panel panel-default">
+
+										<div class="panel-heading" role="tab" id="head{{ action.id}}">
+											<h4 class="panel-title">
+												<a role="button" data-toggle="collapse" data-target="#collapse{{action.id}}" data-parent="#accordion" aria-expanded="false" aria-controls="collapse{{action.id}}">
+														{{ action.title}}
+												</a>
+											</h4>
+										</div>
+										<div id="collapse{{action.id}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="head{{ action.id}}">
+											<div class="panel-body">
+												{{ action.detail}}
+											</div>
+										</div>
+									</div><!--- END PANEL -->
+{% endfor %}
+
+
+
+
+
+
+							</div><!--- END PANEL GROUP-->
+						</div><!--- END ACCORDION AREA -->
+					</div><!-- END COL -->
+				</div><!-- END ROW -->
+			</div><!-- END CONTAINER -->
+		</section>
+		<!-- END WHY CHOOSE US -->
+
+		<!-- START SERVICE -->
+		<section id="service" class="our_service section-padding">
+			<div class="container">
+				<div class="row">
+
+					<div class="section-title text-center">
+						<h2>Trendy <span>Service</span></h2>
+						<div class="line"></div>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae risus nec dui venenatis dignissim. Aenean vitae metus in augue pretium ultrices. Duis dictum eget dolor vel blandit.</p>
+					</div>
+<!--  COL 1 -->
+					<div class="col-md-3 col-sm-3 col-xs-12">
+						<div class="single_service_img">
+							<img src="{% static 'assets/img/women.png' %}" class="img-responsive" alt="" />
+						</div>
+					</div><!-- END COL -->
+<!--  COL 2 -->
+					<div class="col-md-8 col-sm-8 col-xs-12">
+						<div class="row">
+							{% for serv in services %}
+								<div class="col-md-6 col-sm-6 col-xs-12 text-center">
+									<div class="home_single_service">
+										<i class="{{ serv.picto }}"></i>
+										<h4>{{ serv.name}}</h4>
+										<p>{{ serv.detail}}</p>
+									</div>
+								</div><!-- END COL -->
+							{% endfor %}
+
+						</div><!-- END ROW -->
+					</div><!-- END COL -->
+
+			</div><!-- END CONTAINER -->
+		</section>
+		<!-- END SERVICE -->
+
+
+{% endblock %}

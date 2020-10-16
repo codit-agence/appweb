@@ -1,0 +1,63 @@
+{% extends 'layouts/base.html' %}
+{% load static%}
+
+{% block content %}
+
+<section id="about" class="about-us section-padding">
+			<div class="container">
+				<div class="row">
+					<div class="section-title text-center">
+						<h2>Welcome to <span>Codit</span> </h2>
+						<div class="line"></div>
+								<p>Les Entreprise d’aujourd’hui ont besoin d’un partenaire fiable et compétent qui puisse être capable de leur apporter
+									toutes les compétences en communication & marketing digital et mettre en place une stratégie qui
+									leur assurera son objectif : notoriété, business et réputation dans un contexte en perpétuel changement.</p>
+
+					</div>
+					<div class="col-md-6 col-sm-6 col-xs-12">
+						<div class="about-us-content">
+							<h2>About our <span>Codit</span></h2>
+							<div class="about-line"></div>
+							{% for art in articles %}
+								<p>{{ art.body }}</p>
+							{% endfor%}
+
+							<a class="btn-light-bg" href="#">Contactez-nous</a>
+						</div>
+					</div><!-- END COL -->
+					{% for pic in images %}
+
+					<div class="col-md-6 col-sm-6 col-xs-12">
+						<div class="about_img">
+							<img src="{{ pic.image.url}}" class="img-responsive" alt="" height="100%"/>
+
+						</div>
+					</div><!-- END COL -->
+							{% endfor %}
+				</div><!-- END ROW -->
+			</div><!-- END CONTAINER -->
+		</section>
+		<!-- END ABOUT US -->
+
+		<!-- START HOME SERVICE -->
+		<section class="home_service">
+			<div class="container-fliud">
+				<div class="row text-center">
+
+					{% for serv in services %}
+
+					<div class="col-md-3 col-sm-3 col-xs-12 no-padding">
+						<div class="home_single_service">
+							<i class="{{ serv.picto}}"></i>
+							<h4>{{ serv.name}}</h4>
+							<p>{{ serv.detail}}</p>
+						</div>
+					</div><!-- END COL -->
+					{% endfor %}
+				</div><!-- END ROW -->
+			</div><!-- END CONTAINER -->
+		</section>
+		<!-- END HOME SERVICE -->
+
+
+{% endblock %}

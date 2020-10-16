@@ -1,0 +1,40 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fr">
+
+	<head>
+		{% include '_include/header.html' %}
+	</head>
+
+    <body data-spy="scroll" data-offset="80">
+
+			<!-- START PRELOADER -->
+			<div class="preloader">
+				<div class="status">
+					<div class="status-mes"><h4>Codit</h4></div>
+				</div>
+			</div>
+		<!-- END PRELOADER -->
+
+		<!-- START NAVBAR -->
+			{% include '_include/_navbar.html' %}
+		<!-- END NAVBAR -->
+
+		<!-- START HOME -->
+			{% include '_include/_sidebar.html' %}
+		<!-- END  HOME DESIGN -->
+
+		<!-- START BODY -->
+			{% block content %}
+
+			{% endblock %}
+			<!-- START BODY -->
+
+
+		<!-- START FOOTER -->
+			{% include '_include/footer.html' %}
+		<!-- END FOOTER -->
+
+    </body>
+</html>

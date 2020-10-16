@@ -1,0 +1,87 @@
+	{% extends 'layouts/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+
+
+
+		<!-- START CONTACT FORM AND CONTACT ADDRESS-->
+		<section id="contact" class="contact_area section-padding">
+			<div class="container">
+				<div class="row">
+					<div class="section-title text-center">
+						<h2>Get In <span>Touch</span></h2>
+						<div class="line"></div>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae risus nec dui venenatis dignissim. Aenean vitae metus in augue pretium ultrices. Duis dictum eget dolor vel blandit.</p>
+					</div>
+					<div class="col-md-8 col-sm-12 col-sm-6 col-xs-12 wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.2s" data-wow-offset="0">
+						<div class="contact">
+							{% for message in messages %}
+								<li>{{ message}}</li>
+							{% endfor %}
+
+							<form class="form" name="contact" method="post" action="{% url 'gestion:contact' %}" onsubmit="return validation();">
+								{% csrf_token %}
+								{{ form | crispy }}
+									<div class="col-md-12">
+										<div class="actions">
+											<input type="submit" value="Envoyé" name="submit" class="btn btn-lg btn-contact-bg" title="Envoyé votre  Message!" />
+										</div>
+									</div>
+
+							</form>
+
+
+						</div>
+					</div><!-- END COL -->
+					<div class="col-md-4 col-sm-4 col-xs-12">
+						<div class="single-address wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.2s" data-wow-offset="0">
+							<div class="media">
+								<div class="media-left">
+									<i class="fa fa-rocket"></i>
+								</div>
+								<div class="media-body text-left">
+									<h2 class="media-heading">Our Location</h2>
+									<p>CASABLANCA <br> CA 90210</p>
+									<hr>
+									<p>Laayoune <br> CA 90210</p>
+								</div>
+							</div>
+						</div>
+						<div class="single-address wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.5s" data-wow-offset="0">
+							<div class="media">
+								<div class="media-left">
+									<i class="fa fa-phone"></i>
+								</div>
+								<div class="media-body text-left">
+									<h2 class="media-heading">Call us on</h2>
+									<p>(+212) 06 91 500 100 <br> (+212) 06 06 06 73 52</p>
+								</div>
+							</div>
+						</div>
+						<div class="single-address mb-none wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.6s" data-wow-offset="0">
+							<div class="media">
+								<div class="media-left">
+									<i class="fa fa-envelope"></i>
+								</div>
+								<div class="media-body text-left">
+									<h2 class="media-heading">Send your message</h2>
+									<p>info@agencecodit.com<br>admin@agencecodit.com</p>
+								</div>
+							</div>
+						</div>
+					</div><!-- END COL -->
+				</div><!--- END ROW -->
+			</div><!--- END CONTAINER -->
+		</section>
+		<!-- END CONTACT FORM AND CONTACT ADDRESS -->
+
+		<!--STRAT GOOGLE MAP-->
+			<div class="map"></div>
+		<!-- END GOOGLE MAP -->
+
+
+
+
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends 'layouts/base.html' %}
+{% load static%}
+
+{% block content %}
+
+
+<!-- START PRICING TABLE -->
+		<section id="pricing" class="pricing-table section-padding">
+			<div class="container">
+				<div class="row text-center">
+					<div class="section-title">
+						<h2>Codit <span>Offres</span></h2>
+						<div class="line"></div>
+						<p>
+							CODIT vous offre un concept d’accompagnement unique pour atteindre vos objectifs de
+							croissance dans un monde en pleine effervescence numérique.
+							Fruit du retour d’expérience des meilleures innovations,
+							CODIT a été pensé et conçu dans un seul but : vous doter d’une force de frappe marketing & communication à la hauteur
+							du défi digital qui vous attend afin de vous faire profiter pleinement du potentiel business qui en découle sans perturber
+							votre organisation. <br>
+							Nos experts ont travaillé pour les plus grandes marques, ils vont maintenant travailler pour vous !
+						</p>
+					</div>
+{% for offre in offres %}
+					<div class="col-md-3 col-sm-3 col-xs-12">
+						<div class="single_pricing">
+							<h3>Formation :{{ offre.name }} </h3>
+							<div class="price">
+								<span>Prix {{ offre.prix }}</span>
+								<h5>Jours {{ offre.jours }}</h5>
+							</div>
+							<ul class="pricing-list">
+								 <li></li>
+								 <li>100% pratique : {{ offre.pratique }}</li>
+								 <li>Attestation : {{ offre.attestation }} </li>
+								 <li>Projet : {{ offre.projet }}</li>
+							 <li class="btn btn-warning">Inscription OPEN</li>
+
+								 <li>Date limite : 20 Octobre 2020</li>
+
+								 <li>Accompagnement</li>
+							</ul>
+							<div class="pricing-btn">
+								<a href="#" class="btn-light-bg">Select Plan</a>
+							</div>
+						</div><!-- END PRICING TABLE -->
+					</div><!-- END COL -->
+
+{% endfor %}
+
+
+				</div><!--END  ROW  -->
+			</div><!-- END CONTAINER  -->
+		</section>
+		<!-- END PRICING TABLE -->
+
+
+{% endblock %}
