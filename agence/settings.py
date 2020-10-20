@@ -26,7 +26,7 @@ SECRET_KEY = '10y3of8&p$!v4@x5)4qsw&j98dfv_29kb21&_+*cb(9)7wbs+0'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['www.agencecodit.com']
 
 
 # Application definition
