@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '10y3of8&p$!v4@x5)4qsw&j98dfv_29kb21&_+*cb(9)7wbs+0'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -82,9 +82,9 @@ WSGI_APPLICATION = 'agence.wsgi.application'
 DATABASES = {
 'default': {
        	'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'cpanel_dbname',
-       	'USER': 'cpanel_dbuser',
-       	'PASSWORD': 'password',
+        'NAME': 'agencxgy_codit',
+       	'USER': 'ageencxgy',
+       	'PASSWORD': 'codit@_123',
         'HOST': '127.0.0.1',
        	'PORT': '3306',
     }
