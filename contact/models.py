@@ -6,7 +6,7 @@ class Contact(models.Model):
     email = models.EmailField()
     message= models.TextField()
     title=models.CharField(max_length=256, default='contact web')
-    tel=models.IntegerField(max_length=10)
+    tel=models.IntegerField()
     ville=models.CharField(max_length=100)
 
     def __str__(self):
@@ -16,7 +16,7 @@ class Contact(models.Model):
 class ContactInscription(models.Model):
     name    =models.CharField(max_length=100)
     email   = models.EmailField()
-    tel     =models.IntegerField(max_length=10)
+    tel     =models.IntegerField()
     ville   =models.CharField(max_length=100)
     message = models.CharField(max_length=256)
 
